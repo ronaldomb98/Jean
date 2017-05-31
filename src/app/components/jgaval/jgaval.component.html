@@ -23,6 +23,21 @@
     Lista de productos
   </h1>
 </div>
+
+<form class="form-horizontal">
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Filtrar Jean</label>  
+  <div class="col-md-6">
+  <input id="textinput" (keyup)="filterProducto()" [(ngModel)]="nameFilter" name="textinput" type="text" placeholder="Nombre del estilo Jean que busca" class="form-control input-md">
+  </div>
+</div>
+
+</form>
+
+
 <!--<div class="container">
 <table *ngIf="Products" class="table table-hover">
   <thead>
@@ -54,7 +69,6 @@
 <!--<pre >
   {{Products | json}}
 </pre>-->
-<input type="text" (keyup)="filterProducto()" [(ngModel)]="nameFilter">
 
 
 <masonry>
@@ -73,10 +87,12 @@
                 </div>
             </div>
        <!-- <img [src]="'http://jeanbd.jgaval.co/public/'+product.producto_imagen" [alt]="">-->
-     
+    
      
      
   </masonry-brick>
   
-  
+  <div *ngIf="_Products && _Products.length == 0">
+     <h3>No hay Jeans con este filtro</h3>
+     </div> 
 </masonry>
