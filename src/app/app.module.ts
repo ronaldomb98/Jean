@@ -4,17 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-
+import { JgavalService } from "app/jgaval.service";
+import { JgavalComponent } from './components/jgaval/jgaval.component';
+import { MasonryModule } from 'angular2-masonry';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JgavalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MasonryModule
   ],
-  providers: [],
+  providers: [JgavalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

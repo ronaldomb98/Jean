@@ -1,0 +1,82 @@
+ <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Jean</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <!--<li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<div class="title">
+  <h1>
+    Lista de productos
+  </h1>
+</div>
+<!--<div class="container">
+<table *ngIf="Products" class="table table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Valor Unitario</th>
+      <th>Imagen</th>
+      <th>Cantidad</th>
+      <th>Provedor Id</th>
+      <th>Marca Id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of Products">
+      <td>{{product.producto_id}}</td>
+      <td>{{product.producto_nombre}}</td>
+      <td>{{product.producto_descrip}}</td>
+      <td>$ {{product.producto_vunitario | number}}</td>
+      <td> {{product.producto_imagen}}</td>
+      <td>{{product.producto_cantidad | number}}</td>
+      <td>{{product.producto_proveedor_id}}</td>
+      <td>{{product.producto_marca_id}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>-->
+<!--<pre >
+  {{Products | json}}
+</pre>-->
+<input type="text" (keyup)="filterProducto()" [(ngModel)]="nameFilter">
+
+
+<masonry>
+  
+ <masonry-brick *ngFor="let product of _Products">
+     
+ <div class="producto_box mt-4">
+                <div class="card">
+                    <img class="card-img-top" [src]="'http://jeanbd.jgaval.co/public/'+product.producto_imagen">
+                    <div class="card-block">
+                        <figure class="profile">
+                            <img  [src]="'http://jeanbd.jgaval.co/public/'+product.producto_imagen" class="profile-avatar" alt="">
+                        </figure>
+                        <h4 class="card-title mt-3">{{product.producto_nombre}}</h4>
+                    </div>
+                </div>
+            </div>
+       <!-- <img [src]="'http://jeanbd.jgaval.co/public/'+product.producto_imagen" [alt]="">-->
+     
+     
+     
+  </masonry-brick>
+  
+  
+</masonry>
