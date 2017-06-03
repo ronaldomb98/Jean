@@ -28,10 +28,10 @@ public myOptions: MasonryOptions = {
   constructor(public jgavalService: JgavalService) { }
 
   ngOnInit() {
-    this.jgavalService.getProducts()
+    this.jgavalService
+    .getProducts()
     .subscribe((_products) => {
       this._Products = this.Products = _products; 
-     
     },err=>{
       console.log(err);
     },()=>{

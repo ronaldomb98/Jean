@@ -1,0 +1,81 @@
+<form class="form-horizontal" enctype="multipart/form-data" (ngSubmit)="onSubmit(nombre.value, desc.value, vunitario.value, cant.value,proveedor.value,marca.value, files)">
+<fieldset>
+
+<!-- Form Name -->
+<legend>
+  <div *ngIf="create">Crear Producto</div>
+  <div *ngIf="update">Actualizar Producto</div>
+</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Nombre</label>
+  <div class="col-md-4">
+  <input [(ngModel)]="product.producto_nombre" id="textinput" name="nombre" type="text" placeholder="placeholder" class="form-control input-md" #nombre>
+  <span class="help-block">help</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Descripcion</label>
+  <div class="col-md-4">
+  <input [(ngModel)]="product.producto_descrip" id="textinput" name="descripcion" type="text" placeholder="placeholder" class="form-control input-md" #desc>
+  <span class="help-block">help</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">vunitario</label>
+  <div class="col-md-4">
+  <input [(ngModel)]="product.producto_vunitario" id="textinput" name="vunitario" type="text" placeholder="placeholder" class="form-control input-md" #vunitario>
+  <span class="help-block">help</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">cantidad</label>
+  <div class="col-md-4">
+  <input [(ngModel)]="product.producto_cantidad" id="textinput" name="cantidad" type="text" placeholder="placeholder" class="form-control input-md" #cant>
+  <span class="help-block">help</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">proveedor</label>
+  <div class="col-md-4">
+  <input  [(ngModel)]="product.producto_proveedor_id"  id="textinput" name="proveedor" type="text" placeholder="placeholder" class="form-control input-md" #proveedor>
+  <span class="help-block">help</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">marca</label>
+  <div class="col-md-4">
+  <input [(ngModel)]="product.producto_marca_id" id="textinput" name="marca" type="text" placeholder="placeholder" class="form-control input-md" #marca>
+  <span class="help-block">help</span>
+  </div>
+</div>
+
+<!-- File Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="filebutton">imagen</label>
+  <div class="col-md-4">
+    <input id="filebutton" name="filebutton" (change)="fileChangeEvent($event)" class="input-file" type="file" #files>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Guardar</label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Guardar</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
